@@ -218,6 +218,7 @@
                 this.readFile((output) => {
                     _this.sample = get(Papa.parse(output, { preview: 2, skipEmptyLines: true }), "data");
                     _this.csv = get(Papa.parse(output, { skipEmptyLines: true }), "data");
+                    _this.$emit("load",_this.csv);
                 });
             },
             readFile(callback) {
